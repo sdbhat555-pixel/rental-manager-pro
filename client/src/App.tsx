@@ -4,15 +4,52 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import SplashScreen from "./pages/SplashScreen";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Properties from "./pages/Properties";
+import Tenants from "./pages/Tenants";
+import Payments from "./pages/Payments";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import DashboardLayout from "./components/DashboardLayout";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={SplashScreen} />
+      <Route path={"/login"} component={Login} />
+      <Route path={"/dashboard"} component={() => (
+        <DashboardLayout>
+          <Dashboard />
+        </DashboardLayout>
+      )} />
+      <Route path={"/properties"} component={() => (
+        <DashboardLayout>
+          <Properties />
+        </DashboardLayout>
+      )} />
+      <Route path={"/tenants"} component={() => (
+        <DashboardLayout>
+          <Tenants />
+        </DashboardLayout>
+      )} />
+      <Route path={"/payments"} component={() => (
+        <DashboardLayout>
+          <Payments />
+        </DashboardLayout>
+      )} />
+      <Route path={"/reports"} component={() => (
+        <DashboardLayout>
+          <Reports />
+        </DashboardLayout>
+      )} />
+      <Route path={"/settings"} component={() => (
+        <DashboardLayout>
+          <Settings />
+        </DashboardLayout>
+      )} />
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -27,7 +64,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
+        defaultTheme="dark"
         // switchable
       >
         <TooltipProvider>
