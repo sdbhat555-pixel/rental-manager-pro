@@ -82,3 +82,75 @@
 - [ ] Create final checkpoint
 - [ ] Prepare project for delivery
 - [ ] Document any setup instructions
+
+## Phase 10: External Service Integrations
+
+### Google Maps Integration
+- [ ] Get Google Maps API key from Google Cloud Console
+- [ ] Configure Google Maps API in project secrets
+- [ ] Add map component to Properties page showing property locations
+- [ ] Implement geocoding for property addresses
+- [ ] Add property location search/filter functionality
+- [ ] Display property details on map markers
+
+### Twilio SMS Integration
+- [ ] Get Twilio Account SID and Auth Token
+- [ ] Configure Twilio credentials in project secrets
+- [ ] Create SMS notification service for payment reminders
+- [ ] Add SMS sending functionality for overdue payments
+- [ ] Implement SMS notification for tenant lease reminders
+- [ ] Add SMS confirmation for payment recordings
+- [ ] Create SMS opt-in/opt-out management
+
+### SendGrid Email Integration
+- [ ] Get SendGrid API key
+- [ ] Configure SendGrid in project secrets
+- [ ] Create email templates for notifications
+- [ ] Implement email sending for payment confirmations
+- [ ] Add email notifications for property updates
+- [ ] Implement email reminders for upcoming rent due dates
+- [ ] Create email reports and summaries
+
+### OpenAI Integration
+- [ ] Get OpenAI API key
+- [ ] Configure OpenAI in project secrets
+- [ ] Implement AI-powered report generation
+- [ ] Add AI insights for payment trends
+- [ ] Create AI-generated property recommendations
+- [ ] Implement AI chatbot for tenant support
+- [ ] Add AI-powered analytics summaries
+
+## Phase 9: Comprehensive Notification System
+
+### Database & Backend
+- [x] Create notifications table with type, title, message, channels
+- [x] Create notificationPreferences table for user settings
+- [x] Build notification service with CRUD operations
+- [x] Create tRPC procedures for notification management
+
+### UI Components
+- [x] Build NotificationCenter component with dropdown bell icon
+- [x] Build NotificationToast component for temporary alerts
+- [x] Build NotificationBanner component for top-of-page alerts
+- [x] Create Notifications page with history and preferences
+
+### Features
+- [x] Display all notification types (success, error, warning, info)
+- [x] Mark notifications as read/unread
+- [x] Delete individual notifications
+- [x] Clear all notifications
+- [x] Notification preferences UI with toggles
+- [x] Multi-channel notification settings (in-app, SMS, email)
+- [x] Notification type preferences (payments, overdue, property, tenant, reports)
+- [x] Phone number management for SMS notifications
+- [x] Unread notification count badge
+
+### Integration Points
+- [ ] Wire notification triggers for property add/edit/delete
+- [ ] Wire notification triggers for tenant add/edit/delete
+- [ ] Wire notification triggers for payment recording
+- [ ] Wire notification triggers for overdue rent alerts
+- [ ] Integrate Twilio for SMS delivery
+- [ ] Integrate SendGrid for email delivery
+- [ ] Add notification history persistence
+- [ ] Implement real-time notification updates

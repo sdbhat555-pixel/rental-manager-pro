@@ -12,6 +12,7 @@ import Tenants from "./pages/Tenants";
 import Payments from "./pages/Payments";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
+import Notifications from "./pages/Notifications";
 import DashboardLayout from "./components/DashboardLayout";
 
 function Router() {
@@ -47,6 +48,11 @@ function Router() {
       <Route path={"/settings"} component={() => (
         <DashboardLayout>
           <Settings />
+        </DashboardLayout>
+      )} />
+      <Route path={"/notifications"} component={() => (
+        <DashboardLayout>
+          <Notifications />
         </DashboardLayout>
       )} />
       <Route path={"/404"} component={NotFound} />
