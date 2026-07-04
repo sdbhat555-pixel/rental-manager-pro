@@ -146,11 +146,11 @@
 - [x] Unread notification count badge
 
 ### Integration Points
-- [ ] Wire notification triggers for property add/edit/delete
-- [ ] Wire notification triggers for tenant add/edit/delete
-- [ ] Wire notification triggers for payment recording
-- [ ] Wire notification triggers for overdue rent alerts
-- [ ] Integrate Twilio for SMS delivery
-- [ ] Integrate SendGrid for email delivery
-- [ ] Add notification history persistence
+- [x] Wire notification triggers for property add/edit/delete
+- [x] Wire notification triggers for tenant add/edit/delete
+- [x] Wire notification triggers for payment recording
+- [x] Wire notification triggers for overdue rent alerts
+- [x] Integrate Twilio for SMS delivery
+- [x] Integrate SendGrid for email delivery
+- [x] Add notification history persistence
 - [ ] Implement real-time notification updates
