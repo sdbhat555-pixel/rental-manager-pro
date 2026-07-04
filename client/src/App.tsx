@@ -1,6 +1,9 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import Disclaimer from "@/pages/Disclaimer";
+import TermsOfService from "@/pages/TermsOfService";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -19,6 +22,9 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={SplashScreen} />
+      <Route path={"/disclaimer"} component={Disclaimer} />
+      <Route path={"/terms"} component={TermsOfService} />
+      <Route path={"/privacy"} component={PrivacyPolicy} />
       <Route path={"/login"} component={Login} />
       <Route path={"/dashboard"} component={() => (
         <DashboardLayout>
