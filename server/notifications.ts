@@ -1,4 +1,4 @@
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, and } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { notifications, notificationPreferences, Notification, NotificationPreference } from "../drizzle/schema";
 import { ENV } from "./_core/env";
@@ -101,7 +101,7 @@ export async function getUnreadNotifications(userId: number): Promise<Notificati
     return await db
       .select()
       .from(notifications)
-      .where(eq(notifications.userId, userId) && eq(notifications.isRead, "false"))
+      .where(and(eq(notifications.userId, userId), eq(notifications.isRead, "false")))
       .orderBy(desc(notifications.createdAt));
   } catch (error) {
     console.error("[Notifications] Failed to get unread notifications:", error);
@@ -145,7 +145,7 @@ export async function markAllNotificationsAsRead(userId: number): Promise<boolea
     await db
       .update(notifications)
       .set({ isRead: "true" })
-      .where(eq(notifications.userId, userId) && eq(notifications.isRead, "false"));
+      .where(and(eq(notifications.userId, userId), eq(notifications.isRead, "false")));
     return true;
   } catch (error) {
     console.error("[Notifications] Failed to mark all as read:", error);
@@ -258,7 +258,7 @@ export async function getUnreadNotificationCount(userId: number): Promise<number
     const result = await db
       .select()
       .from(notifications)
-      .where(eq(notifications.userId, userId) && eq(notifications.isRead, "false"));
+      .where(and(eq(notifications.userId, userId), eq(notifications.isRead, "false")));
     return result.length;
   } catch (error) {
     console.error("[Notifications] Failed to get unread count:", error);
